@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="32" y="32" width="64" height="64" rx="8" fill="url(#gradient5)" stroke="url(#stroke5)" stroke-width="2"/>
+  <path d="M48 80L56 64L64 88L72 48L80 80" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <animate
+      attributeName="stroke-dasharray"
+      from="0 200"
+      to="200 200"
+      dur="2s"
+      fill="freeze"/>
+  </path>
+  <defs>
+    <linearGradient id="gradient5" x1="0" y1="0" x2="128" y2="128">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="stroke5" x1="0" y1="0" x2="128" y2="128">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M64 24C81.6731 24 96 38.3269 96 56C96 73.6731 81.6731 88 64 88C46.3269 88 32 73.6731 32 56C32 38.3269 46.3269 24 64 24Z" fill="url(#gradient6)" stroke="url(#stroke6)" stroke-width="2"/>
+  <circle cx="64" cy="44" r="8" fill="white"/>
+  <path d="M48 72C48 72 54 64 64 64C74 64 80 72 80 72" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="gradient6" x1="0" y1="0" x2="128" y2="128">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="stroke6" x1="0" y1="0" x2="128" y2="128">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+  </defs>
+</svg>

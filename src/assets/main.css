@@ -1,0 +1,125 @@
+@import './base.css';
+
+*{
+  scrollbar-width: none;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container{
+  width: 100%;
+  padding: 0 4.48vw;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+input{
+  outline: none;
+}
+
+ul, li{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (hover: hover) {
+  a:hover {
+    color: rgba(255, 255, 255, 1);
+  }
+}
+
+@media (max-width: 980px) {
+  .container{
+    padding: 0 4.38vw;
+  }
+}
+
+body * {
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+input {
+  background-color: transparent;
+  border: 0;
+}
+button {
+  margin: 0;
+  padding: 0;
+  border: 1px solid transparent;
+  outline: none;
+  background-color: transparent;
+}
+
+button:active {
+  opacity: 0.6;
+}
+.van-nav-bar__left:active,
+.van-nav-bar__right:active {
+  opacity: 1;
+}
+[class*='van-']::after {
+  border-bottom: 0;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.justify-start {
+  display: flex;
+  justify-content: flex-start;
+}
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.justify-end {
+  display: flex;
+  justify-content: flex-end;
+}
+.justify-evenly {
+  display: flex;
+  justify-content: space-evenly;
+}
+.justify-around {
+  display: flex;
+  justify-content: space-around;
+}
+.justify-between {
+  display: flex;
+  justify-content: space-between;
+}
+.align-start {
+  display: flex;
+  align-items: flex-start;
+}
+.align-center {
+  display: flex;
+  align-items: center;
+}
+.align-end {
+  display: flex;
+  align-items: flex-end;
+}
+.cursor-pointer {
+  cursor: pointer;
+}

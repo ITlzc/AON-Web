@@ -1,0 +1,13 @@
+.filter-bar {
+    .ant-input {
+        color: #858585;
+    }
+
+    .ant-input::placeholder {
+        color: #858585;
+      }
+
+    .ant-input-affix-wrapper-focused {
+        box-shadow: none;
+    }
+}

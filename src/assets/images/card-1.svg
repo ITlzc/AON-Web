@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="64" cy="64" r="60" fill="url(#gradient1)" stroke="url(#stroke1)" stroke-width="2"/>
+  <path d="M44 64C44 52.9543 52.9543 44 64 44C75.0457 44 84 52.9543 84 64C84 75.0457 75.0457 84 64 84" stroke="white" stroke-width="4" stroke-linecap="round">
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="0 64 64"
+      to="360 64 64"
+      dur="2s"
+      repeatCount="indefinite"/>
+  </path>
+  <circle cx="64" cy="64" r="8" fill="white"/>
+  <defs>
+    <linearGradient id="gradient1" x1="0" y1="0" x2="128" y2="128">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="stroke1" x1="0" y1="0" x2="128" y2="128">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+  </defs>
+</svg>
