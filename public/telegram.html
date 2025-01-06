@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Login Example</title>
+    <style>
+        /* body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #user-info {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            display: none;
+        } */
+
+        body{
+            margin: 0;
+            background: rgba(20, 20, 20, 1);;
+        }
+
+        .flex-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .flex-row {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .justify-start {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .justify-center {
+            display: flex;
+            justify-content: center;
+        }
+
+        .justify-end {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .justify-evenly {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .justify-around {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .justify-between {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .align-start {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .align-center {
+            display: flex;
+            align-items: center;
+        }
+
+        .align-end {
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .page {
+            background-color: rgba(20, 20, 20, 1);
+            position: relative;
+            width: 100vw;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .block_1 {
+            width: 100vw;
+            height: 20vw;
+        }
+
+        .box_2 {
+            width: 80vw;
+            height: 7.47vw;
+            margin: 2.13vw 0 0 4.8vw;
+        }
+
+        .label_1 {
+            width: 7.47vw;
+            height: 7.47vw;
+        }
+
+        .text_1 {
+            width: 69.34vw;
+            height: 7.47vw;
+            overflow-wrap: break-word;
+            color: rgba(255, 255, 255, 1);
+            font-size: 5.33vw;
+            font-family: Roboto Flex-Bold;
+            font-weight: 700;
+            text-align: center;
+            white-space: nowrap;
+            line-height: 7.47vw;
+        }
+
+        .section_2 {
+            background-image: linear-gradient(136deg,
+                    rgba(62, 62, 62, 0.35) 0,
+                    rgba(73, 72, 72, 1) 100%);
+            width: 89.6vw;
+            height: 72.54vw;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            border-radius: 24px;
+            border: 1px solid rgba(34, 144, 234, 1);
+            /* border-image-source: linear-gradient(136deg, rgba(67, 232, 160, 1), rgba(34, 144, 234, 1));
+            border-image-slice: 1;
+            border-image-width: 1px;
+            border-image-outset: 0; */
+        }
+
+        .text_2 {
+            background-image: linear-gradient(270deg,
+                    rgba(67, 232, 160, 1) 0,
+                    rgba(138, 242, 95, 1) 100%);
+            width: 68.27vw;
+            height: 7.47vw;
+            overflow-wrap: break-word;
+            font-size: 5.33vw;
+            font-family: Roboto Flex-Bold;
+            font-weight: 700;
+            text-align: center;
+            white-space: nowrap;
+            line-height: 7.47vw;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 10.66vw 0 0 10.66vw;
+        }
+
+        .image_1 {
+            width: 39.47vw;
+            height: 10.67vw;
+            margin: 8.53vw 0 0 25.06vw;
+        }
+
+        .paragraph_1 {
+            width: 68.27vw;
+            height: 16vw;
+            overflow-wrap: break-word;
+            color: rgba(255, 255, 255, 1);
+            font-size: 3.2vw;
+            font-family: Roboto Flex-Regular;
+            font-weight: normal;
+            text-align: left;
+            line-height: 5.34vw;
+            margin: 8.53vw 0 10.66vw 10.66vw;
+        }
+
+        .block_2 {
+            width: 100vw;
+            margin-bottom: 0.27vw;
+            margin-top: 10.66vw;
+        }
+
+        .box_1 {
+            background-color: rgba(34, 144, 234, 1);
+            border-radius: 32px;
+            width: 71.47vw;
+            height: 8.54vw;
+            margin: 10.66vw 0 0 14.4vw;
+        }
+
+        .image-text_2 {
+            width: 44.8vw;
+            height: 6.4vw;
+            margin: 1.06vw 0 0 13.33vw;
+        }
+
+        .thumbnail_1 {
+            width: 4.27vw;
+            height: 4.27vw;
+            margin-top: 1.07vw;
+        }
+
+        .text-group_1 {
+            min-width: 38.4vw;
+            height: 6.4vw;
+            overflow-wrap: break-word;
+            color: rgba(255, 255, 255, 1);
+            font-size: 4.26vw;
+            font-family: Roboto Flex-Regular;
+            font-weight: normal;
+            text-align: center;
+            white-space: nowrap;
+            line-height: 6.4vw;
+        }
+
+        /* @media screen and (min-width: 1024px) {
+            .page {
+                background-color: rgba(20, 20, 20, 1);
+                position: relative;
+                width: 375px;
+                height: 100%;
+                overflow: hidden;
+            }
+
+            .block_1 {
+                width: 375px;
+                height: 75px;
+            }
+
+            .box_2 {
+                width: 300px;
+                height: 28px;
+                margin: 8px 0 0 18px;
+            }
+
+            .label_1 {
+                width: 28px;
+                height: 28px;
+            }
+
+            .text_1 {
+                width: 260px;
+                height: 28px;
+                overflow-wrap: break-word;
+                color: rgba(255, 255, 255, 1);
+                font-size: 20px;
+                font-family: Roboto Flex-Bold;
+                font-weight: 700;
+                text-align: center;
+                white-space: nowrap;
+                line-height: 28px;
+            }
+
+            .section_2 {
+                background-image: linear-gradient(136deg,
+                        rgba(62, 62, 62, 0.35) 0,
+                        rgba(73, 72, 72, 1) 100%);
+                width: 336px;
+                height: 272px;
+                border: 1px gradient;
+                justify-content: flex-center;
+                margin: -1px 0 0 20px;
+            }
+
+            .text_2 {
+                background-image: linear-gradient(270deg,
+                        rgba(67, 232, 160, 1) 0,
+                        rgba(138, 242, 95, 1) 100%);
+                width: 256px;
+                height: 28px;
+                overflow-wrap: break-word;
+                color: ;
+                font-size: 20px;
+                font-family: Roboto Flex-Bold;
+                font-weight: 700;
+                text-align: center;
+                white-space: nowrap;
+                line-height: 28px;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin: 40px 0 0 40px;
+            }
+
+            .image_1 {
+                width: 148px;
+                height: 40px;
+                margin: 32px 0 0 94px;
+            }
+
+            .paragraph_1 {
+                width: 256px;
+                height: 60px;
+                overflow-wrap: break-word;
+                color: rgba(255, 255, 255, 1);
+                font-size: 12px;
+                font-family: Roboto Flex-Regular;
+                font-weight: normal;
+                text-align: left;
+                line-height: 20px;
+                margin: 32px 0 40px 40px;
+            }
+
+            .block_2 {
+                width: 375px;
+                margin-bottom: 1px;
+            }
+
+            .box_1 {
+                background-color: rgba(34, 144, 234, 1);
+                border-radius: 32px;
+                width: 268px;
+                height: 32px;
+                margin: 40px 0 0 54px;
+            }
+
+            .image-text_2 {
+                width: 168px;
+                height: 24px;
+                margin: 4px 0 0 50px;
+            }
+
+            .thumbnail_1 {
+                width: 16px;
+                height: 16px;
+                margin-top: 4px;
+            }
+
+            .text-group_1 {
+                min-width: 144px;
+                height: 24px;
+                overflow-wrap: break-word;
+                color: rgba(255, 255, 255, 1);
+                font-size: 16px;
+                font-family: Roboto Flex-Regular;
+                font-weight: normal;
+                text-align: center;
+                white-space: nowrap;
+                line-height: 24px;
+            }
+
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="page flex-col">
+        <div class="block_1 flex-col">
+            <!-- <div class="box_2 flex-row justify-between">
+            <img
+              class="label_1"
+              referrerpolicy="no-referrer"
+              src="https://lanhu-oss.lanhuapp.com/MasterDDSSlicePNGd1824a8f6f10d8ca55d129f60ff453cc.png"
+            />
+            <span class="text_1">login</span>
+          </div> -->
+        </div>
+        <div class="section_2 flex-col">
+            <span class="text_2">Login With Telegram</span>
+            <img class="image_1" referrerpolicy="no-referrer"
+                src="https://lanhu-oss.lanhuapp.com/MasterDDSSlicePNG5b23ea23ba7094dd5fbf44b6892ca3ff.png" />
+            <span class="paragraph_1">You Can Directly Login To The Application With Your Telegram Account, And Later
+                You Can Manage Your Binding In Your Personal Center.<br /><br /><br /><br /></span>
+        </div>
+        <div class="block_2 flex-col align-center">
+            <!-- <div class="box_1 flex-row">
+                <div class="image-text_2 flex-row justify-between"> -->
+                    <!-- <img class="thumbnail_1" referrerpolicy="no-referrer"
+                        src="https://lanhu-oss.lanhuapp.com/MasterDDSSlicePNGcc32a587c0fa0c050777e7430faf8621.png" /> -->
+                    <!-- <span class="text-group_1">login with telegram</span> -->
+                <!-- </div>
+            </div> -->
+            <script class="text-group_1" async src="https://telegram.org/js/telegram-widget.js?22"
+                data-telegram-login="iAONAi_Bot" data-size="large" data-radius="8"
+                data-onauth="onTelegramAuth(user)" data-request-access="write"></script>
+        </div>
+    </div>
+    <!-- <div class="container">
+        <h1>Welcome to My App</h1>
+        <p>Please log in with Telegram:</p>
+
+        <script async src="https://telegram.org/js/telegram-widget.js?22"
+                data-telegram-login="shenliu_bot"
+                data-size="large"
+                data-radius="8"
+                data-onauth="onTelegramAuth(user)"
+                data-request-access="write"></script>
+
+        <div id="user-info"></div>
+    </div> -->
+
+    <script>
+        async function onTelegramAuth(user) {
+            // 这里应该发送用户数据到您的服务器进行验证
+            // 出于演示目的，我们只是显示用户信息
+            console.log(user);
+            const userInfo = document.getElementById('user-info');
+            userInfo.style.display = 'block';
+            userInfo.innerHTML = '<h3>Logged in successfully!</h3>' +
+                '<p>Name: ' + user.first_name + ' ' + user.last_name + '</p>' +
+                '<p>Telegram ID: ' + user.id + '</p>' +
+                '<p>Username: @' + user.username + '</p>';
+
+
+            const url = new URL(window.location.href);
+            const params = new URLSearchParams(url.search);
+
+            // 获取名为 'someParam' 的参数值
+            const someParam = params.get('data');
+            const redirectTo = params.get('redirectTo');
+            console.log('URL 参数 someParam:', someParam, redirectTo);
+            // let url1 = redirectTo + '?error=server_error&error_code=422' + '&error_description=The+Telegram+account+has+already+been+associated.'
+            // window.location.assign(redirectTo)
+            // return
+
+            try {
+                let response = await fetch("https://api.iaon.ai/functions/v1/telegram_oauth_provider", {
+                    method: "POST",
+                    body: JSON.stringify(user),
+                    headers: {
+                        'Content-Type': 'application/json',
+                        authorization: "Bearer " + someParam,
+                        apikey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZieHR2amZmaHNpcm55eGpjdWt1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjI1MTY1NjQsImV4cCI6MjAzODA5MjU2NH0.E6SFFojKzIZCRIQAhoJ49aO4yY-m1Mb2sZtSkVh-tBg'
+                    }
+                })
+                let responseData = await response.json()
+                console.log("responseData =", responseData)
+
+                console.log("redirectTo =", redirectTo)
+                if (responseData && responseData.valid) {
+                    console.log('successfully')
+                    // window.location.href = redirectTo
+                    window.location.assign(redirectTo)
+                } else {
+                    let error_msg = 0
+                    console.log('responseData linked = ', responseData.linked)
+                    if (responseData && responseData.linked == 1) {
+                        // error_msg = 'The+current+user+has+already+associated+a+Telegram+account'
+                        error_msg = 421
+                    }
+                    if (responseData && responseData.linked == 2) {
+                        // msg = 'Telegram+account+already+been+used'
+                        // error_msg = 'Telegram'
+                        error_msg = 423
+                    }
+                    console.log('responseData linked assign = ', responseData.linked, error_msg)
+                    // let url = redirectTo + '?error=server_error&error_code=422' + '&error_description=' + msg
+                    let url = redirectTo + '?error=server_error&error_code=' + error_msg
+
+                    window.location.assign(url)
+                    // window.location.href = 
+                }
+            } catch (error) {
+                console.log("error =", error)
+                let url = redirectTo + '?error=server_error&error_code=422' + '&error_description='
+                // window.location.href = redirectTo + '?error=server_error&error_code=422' + '&error_description=' + error.message
+                window.location.assign(url)
+            }
+            // 在实际应用中，您应该在这里处理用户认证逻辑
+
+        }
+    </script>
+</body>
+
+</html>
